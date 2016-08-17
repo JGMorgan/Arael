@@ -10,6 +10,14 @@ var transpose = (x) => {
     return out;
 }
 
+var clone = (x) => {
+    var out = [];
+    for (var i = 0; i < x.length; i++){
+        out.push(x[i].slice(0));
+    }
+    return out;
+}
+
 var determinant = (x) => {
     if(x.length === 2){
         return x[0][0] * x[1][1] - x[1][0] * x[0][1];
@@ -38,13 +46,6 @@ var determinant = (x) => {
 }
 
 var inverse = (x) => {
-    var clone = (x) => {
-        var out = [];
-        for (var i = 0; i < x.length; i++){
-            out.push(x[i].slice(0));
-        }
-        return out;
-    }
     var minors = (x) => {
         var out = [];
         if (x.length === 2){
@@ -154,7 +155,7 @@ var distance = (x, y) => {
     return Math.sqrt(sum);
 }
 
-module.exports = {dot, determinant, inverse, transpose, reLU, sigmoid,
+module.exports = {dot, clone, determinant, inverse, transpose, reLU, sigmoid,
                   sigmoidPrime, tanh, tanhPrime, linear, linearPrime,
                   distance
                  };
