@@ -1,0 +1,11 @@
+{
+    "devDependencies": {
+        "jest-cli": "*"
+    },
+    "scripts": {
+        "test": "jest"
+    },
+    "jest": {
+        "collectCoverage": true
+    }
+}
