@@ -22,7 +22,6 @@ var determinant = (x) => {
     if(x.length === 2){
         return x[0][0] * x[1][1] - x[1][0] * x[0][1];
     }else if(x.length === 3){
-        //|A| = a(ei - fh) - b(di - fg) + c(dh - eg)
         return x[0][0] * (x[1][1] * x[2][2] - x[1][2] * x[2][1])
              - x[0][1] * (x[1][0] * x[2][2] - x[1][2] * x[2][0])
              + x[0][2] * (x[1][0] * x[2][1] - x[1][1] * x[2][0]);
@@ -124,19 +123,23 @@ var sigmoid = (x) => {
 }
 
 var sigmoidPrime = (x) => {
-    var eNegX = Math.Pow(Math.E, -x);
+    var eNegX = Math.pow(Math.E, -x);
     return (eNegX / Math.pow(1 + eNegX, 2));
 }
 
 var tanh = (x) => {
     var eX = Math.pow(Math.E, x);
     var eNegX = Math.pow(Math.E, -x);
-    return (eX - eNegX) / (eX + eNegX);
+    var out = (eX - eNegX) / (eX + eNegX);
+    if (isNaN(out)){
+        return 1;
+    }
+    return out;
 }
 
 var tanhPrime = (x) => {
     var tanhx = tanh(x);
-    return 1 - (tanhx * tanhx)
+    return 1 - (tanhx * tanhx);
 }
 
 var linear = (x) => {
