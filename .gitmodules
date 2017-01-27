@@ -1,0 +1,6 @@
+[submodule "Arael-JS"]
+	path = Arael-JS
+	url = https://github.com/JGMorgan/Arael-JS.git
+[submodule "Arael-Reason"]
+	path = Arael-Reason
+	url = https://github.com/JGMorgan/Arael-Reason.git

@@ -1,2 +1,3 @@
-# arael
-A machine learning library for JavaScript.
+# Arael
+
+All my machine learning libraries in one place.
